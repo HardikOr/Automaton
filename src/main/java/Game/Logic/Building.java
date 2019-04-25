@@ -1,7 +1,7 @@
 package Game.Logic;
 
-import Utils.Dimension2i;
-import Utils.Vec2i;
+import Game.Utils.Dimension2i;
+import Game.Utils.Vec2i;
 
 public class Building {
 

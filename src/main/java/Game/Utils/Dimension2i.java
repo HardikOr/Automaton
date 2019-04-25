@@ -1,4 +1,4 @@
-package Utils;
+package Game.Utils;
 
 public class Dimension2i {
 
