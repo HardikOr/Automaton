@@ -1,4 +1,4 @@
-package Game.Logic;
+package Utils;
 
 public class Vec2i {
 

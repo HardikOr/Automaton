@@ -1,5 +1,8 @@
 package Game.Logic;
 
+import Utils.Dimension2i;
+import Utils.Vec2i;
+
 public class Building {
 
     Vec2i loc;
@@ -23,8 +26,8 @@ public class Building {
 
     //true if building stands on block (x, y)
     private boolean hasCollision(int x, int y) {
-        if (x >= loc.x && x < loc.x + dim.w &&
-                y >= loc.y && y < loc.y + dim.h)
+        if (x >= loc.getX() && x < loc.getX() + dim.getW() &&
+                y >= loc.getY() && y < loc.getY() + dim.getH())
             return true;
         else
             return false;
@@ -32,7 +35,7 @@ public class Building {
     }
 
     public boolean hasCollision(Building b) {
-        if (hasCollision(b.loc.x, b.loc.y) || b.hasCollision(loc.x, loc.y))
+        if (hasCollision(b.loc.getX(), b.loc.getY()) || b.hasCollision(loc.getX(), loc.getY()))
             return true;
         else
             return false;
