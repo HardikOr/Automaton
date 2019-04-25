@@ -1,5 +1,7 @@
 package Game.Utils;
 
+import java.util.Objects;
+
 public class Dimension2i {
 
     int h,w;
@@ -23,5 +25,19 @@ public class Dimension2i {
 
     public void setW(int w) {
         this.w = w;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dimension2i that = (Dimension2i) o;
+        return h == that.h &&
+                w == that.w;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(h, w);
     }
 }

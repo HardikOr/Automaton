@@ -3,6 +3,8 @@ package Game.Logic;
 import Game.Utils.Dimension2i;
 import Game.Utils.Vec2i;
 
+import java.util.Objects;
+
 public class Building {
 
     Vec2i loc;
@@ -41,4 +43,17 @@ public class Building {
             return false;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Building building = (Building) o;
+        return loc.equals(building.loc) &&
+                dim.equals(building.dim);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(loc, dim);
+    }
 }

@@ -1,19 +1,20 @@
-package Game.Logic.Test;
+package Game.Logic;
 
-import Game.Logic.Building;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BuildingTest {
+class BuildingSetTest {
 
     @Test
-    void hasCollision() {
+    void canPlace() {
         Building a = new Building(1, 1, 2, 2);
         Building b = new Building(3, 3, 2, 2);
         Building c = new Building(2,2 ,2,2);
 
-        assertFalse(a.hasCollision(b) || b.hasCollision(a));
-        assertTrue(a.hasCollision(c) && c.hasCollision(a));
+        BuildingSet bs = new BuildingSet();
+        bs.place(a);
+        assertTrue(bs.place(b));
+        assertFalse(bs.place(c));
     }
 }

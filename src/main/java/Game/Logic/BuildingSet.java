@@ -1,11 +1,17 @@
 package Game.Logic;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Set;
 
 public class BuildingSet {
     //maybe need some constructors
     //getters and setters
     private Set<Building> buildings;
+
+    public BuildingSet() {
+        buildings =  new HashSet<>();
+    }
 
     public boolean containsBuilding(Building b) {
         return buildings.contains(b);
