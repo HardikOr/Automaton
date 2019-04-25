@@ -22,7 +22,7 @@ public class Building {
     }
 
     //true if building stands on block (x, y)
-    public boolean hasCollision(int x, int y) {
+    private boolean hasCollision(int x, int y) {
         if (x >= loc.x && x < loc.x + dim.w &&
                 y >= loc.y && y < loc.y + dim.h)
             return true;
